@@ -1,1 +1,5 @@
-### Aim of the experiment
+This experiment is structured to demonstrate the SMA* search algorithm applied on a simple graph search setting. It provides a step-by-step understanding of the SMA* algorithm, its heuristic function, memory limit, and how it can be used to find the best path between two nodes in a graph given memory constraints.
+
+## Objectives:
+- **Understand the SMA\* search algorithm and explore heuristic functions:** Learn the working principles of the SMA* search algorithm and the role of heuristic functions in guiding the search process and how it influences the efficiency of finding the best path between two nodes in a graph given a memory limit.
+- **Visualize the search process and path history:** Observe the step-by-step search process of the SMA* algorithm on a graph, highlighting the nodes expanded, the path taken, and the heuristic values for each node. Understand how the SMA* algorithm keeps track of the path taken to reach a node and how it backtracks to find the optimal path from the start node to the goal node.
