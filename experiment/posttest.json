@@ -2,38 +2,102 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "How does SMA* account for the f value of a forgotten node?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The value is lost forever.",
+        "b": "The value is noted down in a separate list.",
+        "c": "The value is backed up to the parent.",
+        "d": "The value is reset to infinity."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "When does SMA* regenerate a subtree?",
+      "answers": {
+        "a": "When the algorithm reaches its maximum iteration limit and requires a reset",
+        "b": "When the node is encountered again",
+        "c": "When all other paths have been shown to look worse than the forgotten path",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In this implementation of the algorithm, can there be multiple f values for the same node in the frontier?",
+      "answers": {
+        "a": "yes",
+        "b": "no"
+      },
+      "explanations": {
+        "a": "Try to construct an example where this is true.",
+        "b": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which statement is true about SMA* search and Uniform Cost Search (UCS)?",
+      "answers": {
+        "a": "Both are informed search, and UCS is ordered by h value",
+        "b": "Both are uninformed search, and UCS is ordered by g value",
+        "c": "UCS is uninformed search, and SMA* is informed search ordered by g value",
+        "d": "UCS is uninformed search, and SMA* is informed search ordered by f value"
+      },
+      "explanations": {
+        "a": "There is no heuristic in UCS.",
+        "b": "SMA* is informed search.",
+        "c": "SMA* is ordered by f value.",
+        "d": "Refer to UCS experiment."
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the tradeoff in SMA* ?",
+      "answers": {
+        "a": "Memory limitations making the computation time longer",
+        "b": "Computation time making the memory size longer",
+        "c": "Memory limitations making the computation time shorter",
+        "d": "Computation time making the memory size shorter"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What happens if a node is at max depth?",
+      "answers": {
+        "a": "If its not a goal node, its f cost is set to infinity and it is added.",
+        "b": "If its a goal node, it is added.",
+        "c": "The algorithm may terminate.",
+        "d": "All of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
     }
   ]
 }

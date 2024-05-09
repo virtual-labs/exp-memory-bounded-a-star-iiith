@@ -33,8 +33,9 @@ STEP 8: Repeat steps 2-7 until the goal node is reached or the frontier is empty
 ## Example
 
 ![SMA* Search Example](./images/smastar.png)
-Progress of an SMA* search with a memory size of three nodes, on the state space shown at the top. Each node is labelled with its current f-cost. Values in parentheses show the value of the best forgotten descendant. 
-Reference: Figure 4.11 of Reference 1 (First Edition)
+
+- Progress of an SMA* search with a memory size of three nodes, on the state space shown at the top. Each node is labelled with its current f-cost. Values in parentheses show the value of the best forgotten descendant. 
+- Reference: Figure 4.11 of Reference 1 (First Edition)
 
 
 **Intuition**
