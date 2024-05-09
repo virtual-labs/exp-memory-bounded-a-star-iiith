@@ -1,1 +1,1 @@
-## Experiment name
+## SMA* Search
