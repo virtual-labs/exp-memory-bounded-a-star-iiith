@@ -40,7 +40,7 @@
                     <div id="instruction-title" class="v-collapsible is-size-5">Instructions</div>
                     <div id="instructions" class="v-content" style="text-align: left; padding-left: 5%; padding-right: 5%;">
                         <ul id="instruc" style="list-style: disc;">
-							<li>Start The Algorithm by clicking on the <code>Start SMA*</code> button after selecting the <code>Start Vertex</code> and <code>End Vertex</code> from any of the existing nodes</li>
+							<!-- <li>Start The Algorithm by clicking on the <code>Start SMA*</code> button after selecting the <code>Start Vertex</code> and <code>End Vertex</code> from any of the existing nodes</li>
 							<li>Cycle through the steps of the algorithm by clicking the <code>Next</code> button</li>
 							<li>Enabling <code>Autoplay</code> cycles though the algorithm automatically</li>
 							<li><code>Clear</code> removes the Whole Graph</li>
@@ -56,7 +56,25 @@
                             <li>The current node is denoted with a bold black circular outline.</li>
                             <li>The black outline always moves from the parent to the next neighbouring node based on the frontier.</li>
                             <li>The end node is fixed to be node 0.</li>
-                            <li>You can only enter an edge cost larger than the absolute value of the difference of the heuristic values of the two nodes.</li>
+                            <li>You can only enter an edge cost larger than the absolute value of the difference of the heuristic values of the two nodes.</li> -->
+                            <li><b>Start SMA*:</b> Click the <b>Start SMA*</b> button after selecting the <b>Start Vertex</b> and <b>End Vertex</b> from any existing node to start the algorithm.</li>
+							<li><b>Next:</b> Progress through the algorithm steps by clicking the <b>Next</b> button.</li>
+							<li><b>Autoplay:</b> Enable <b>Autoplay</b> to automatically cycle through the algorithm steps.</li>
+							<li><b>Clear:</b> Use the <b>Clear</b> button to remove the entire graph.</li>
+							<li><b>Clear Visited:</b> Click <b>Clear Visited</b> to reset all nodes to their initial unvisited state.</li>
+							<li><b>Create Node:</b> Add a new node by clicking on an empty area within the graph.</li>
+							<li><b>Move Node:</b> Drag a node to change its position on the graph.</li>
+                            <li><b>Remove Node:</b> Right click on a node to remove it from the graph</li>
+							<li><b>Create Edge:</b> Form an edge by selecting one node and then clicking another node. Enter the edge cost in the box that appears below the Information box. The edge cost must be between 0 and 2000.</li>
+							<li><b>Remove Edge:</b> Eliminate an edge by selecting one node and then clicking an adjacent node.</li>
+                            <li><b>Color Coding:</b> Nodes are color-coded as <span style="color:green;">Green</span> for unvisited, <span style="color:orange;">Orange</span> for the frontier, and <span style="color:black;">Black</span> for visited.
+                            <li><b>Current Node:</b>    The current node is identified by a <span style="color: black">Black</span> outline.
+                            The black outline always moves from the parent to the next node based on the frontier.</li>
+                            <li><b>Information:</b> Refer to the Information section for the Frontier, the current node (Visiting), the next node (To Visit), and the Current Path on which the current node has been expanded.</li>
+                            <li><b>Path History:</b> The Path History section displays the path taken and the total path cost at each step of the algorithm.</li>
+                            <li><b>Question:</b> Answer the question in the Question section and click on <b>Submit</b> to proceed to the next step of the algorithm. 
+                                It will only proceed if the correct answer is given. Otherwise, "<span style="color:red">Wrong answer, try again </span>" will be displayed. 
+                                After 3 incorrect attempts, a hint may be given. After 5 incorrect attempts, the correct answer will be displayed. At the 7th incorrect attempt, the algorithm will proceed regardless of the answer.</li>
                         </ul>
                     </div>
                 </div>
