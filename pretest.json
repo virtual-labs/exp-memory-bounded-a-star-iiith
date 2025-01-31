@@ -1,0 +1,99 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What kind of data structure does SMA* search use?",
+      "answers": {
+        "a": "Linked List",
+        "b": "Stack",
+        "c": "Priority Queue",
+        "d": "Regular Queue"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "Nodes are expanded in order of their f values.",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Is SMA* an informed or uninformed search algorithm?",
+      "answers": {
+        "a": "Informed",
+        "b": "Uninformed"
+      },
+      "explanations": {
+        "a": "The heuristic function is problem-specific knowledge to help 'inform' solutions",
+        "b": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In SMA* search, what is the role of the heuristic function?",
+      "answers": {
+        "a": "Estimates distance from the start node to the current node.",
+        "b": "Estimates the cost of the cheapest path from the current node to the goal node.",
+        "c": "Estimates distance from the start node to the goal node.",
+        "d": "Estimates the cost of the cheapest path from the start node to the goal node."
+      },
+      "explanations": {
+        "a": "",
+        "b": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In SMA* search, what does the f value represent?",
+      "answers": {
+        "a": "It represents the heuristic value of the current node.",
+        "b": "It represents the cost of the cheapest path found from the current node to the goal node.",
+        "c": "It represents the actual cost of the path from the start node to the current node.",
+        "d": "It represents the sum of the actual cost from the start node to the current node and the estimated cost from the current node to the goal node."
+      },
+      "explanations": {
+        "a": "",
+        "b": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following is true about SMA* search?",
+      "answers": {
+        "a": "It is always complete.",
+        "b": "It is always optimal.",
+        "c": "It is never complete nor optimal.",
+        "d": "It is complete if enough memory is available to store the shallowest solution."
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": "Check Reference 1 for the proof."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "When could SMA* perform worse than breadth-first search?",
+      "answers": {
+        "a": "When the heuristic function is not admissible",
+        "b": "When the heuristic function is consistent",
+        "c": "When the search space is infinite",
+        "d": "When the cost of the optimal solution is high"
+      },
+      "explanations": {
+        "a": "SMA* may unnecessarily expand nodes and find suboptimal solutions.",
+        "b": "SMA* would be optimal under this condition.",
+        "c": "SMA* is still better than breadth-first search in this case.",
+        "d": "SMA* would still be optimal under this condition."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    }
+  ]
+}

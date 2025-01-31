@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" onload="var isInstru = false;">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title id="title"></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+	    <script type="text/javascript">
+		  var isInstru = false;
+	    </script>
+    </head>
+
+    <body onload="isWeigted = false; NoQuestion = false;" style="padding-top: 20px;">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-quarter v-instruction-title">
+                    Tasks
+                </div>
+                <div class="column">
+                    <div class="v-tabs">
+                        <ul>
+                            <li class="is-active" id="Task1">
+                                <a>
+                                    SMA* Search
+                                </a>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered" onclick="isInstru = !isInstru; if (isInstru) {document.getElementById('instruction-title').classList.add('v-collapsible-active'); document.getElementById('instructions').style.setProperty('max-height', '1020px', '');} else {document.getElementById('instruction-title').classList.remove('v-collapsible-active'); document.getElementById('instructions').style.removeProperty('max-height');}">
+            <div class="column">
+                <div class="v-collapsible-instruction-container v-instruction-container">
+                    <div id="instruction-title" class="v-collapsible is-size-5">Instructions</div>
+                    <div id="instructions" class="v-content" style="text-align: left; padding-left: 5%; padding-right: 5%;">
+                        <ul id="instruc" style="list-style: disc;">
+							<!-- <li>Start The Algorithm by clicking on the <code>Start SMA*</code> button after selecting the <code>Start Vertex</code> and <code>End Vertex</code> from any of the existing nodes</li>
+							<li>Cycle through the steps of the algorithm by clicking the <code>Next</code> button</li>
+							<li>Enabling <code>Autoplay</code> cycles though the algorithm automatically</li>
+							<li><code>Clear</code> removes the Whole Graph</li>
+							<li><code>Clear Visited</code> clears the status of all nodes</li>
+							<li>Clicking on the graph creates a node</li>
+                            <li>Right Clicking on a node deletes it</li>
+							<li>You may drag a node to move it</li>
+							<li>Clicking on a node selects it, and clicking on a node after this, creates an edge between those 2 nodes</li>
+							<li>Once an edge exists, repeating the above step removes the edge between those 2 nodes</li>
+							<li>Green is Unvisited</li>
+                            <li>Orange is The Frontier</li>
+                            <li>Black is Visited</li>
+                            <li>The current node is denoted with a bold black circular outline.</li>
+                            <li>The black outline always moves from the parent to the next neighbouring node based on the frontier.</li>
+                            <li>The end node is fixed to be node 0.</li>
+                            <li>You can only enter an edge cost larger than the absolute value of the difference of the heuristic values of the two nodes.</li> -->
+                            <li><b>Start SMA*:</b> Click the <b>Start SMA*</b> button after selecting the <b>Start Vertex</b> and <b>End Vertex</b> from any existing node to start the algorithm.</li>
+							<li><b>Next:</b> Progress through the algorithm steps by clicking the <b>Next</b> button.</li>
+							<li><b>Autoplay:</b> Enable <b>Autoplay</b> to automatically cycle through the algorithm steps.</li>
+							<li><b>Clear:</b> Use the <b>Clear</b> button to remove the entire graph.</li>
+							<li><b>Clear Visited:</b> Click <b>Clear Visited</b> to reset all nodes to their initial unvisited state.</li>
+							<li><b>Create Node:</b> Add a new node by clicking on an empty area within the graph.</li>
+							<li><b>Move Node:</b> Drag a node to change its position on the graph.</li>
+                            <li><b>Remove Node:</b> Right click on a node to remove it from the graph</li>
+							<li><b>Create Edge:</b> Form an edge by selecting one node and then clicking another node. Enter the edge cost in the box that appears below the Information box. The edge cost must be between 0 and 2000.</li>
+							<li><b>Remove Edge:</b> Eliminate an edge by selecting one node and then clicking an adjacent node.</li>
+                            <li><b>Color Coding:</b> Nodes are color-coded as <span style="color:green;">Green</span> for unvisited, <span style="color:orange;">Orange</span> for the frontier, and <span style="color:black;">Black</span> for visited.
+                            <li><b>Current Node:</b>    The current node is identified by a <span style="color: black">Black</span> outline.
+                            The black outline always moves from the parent to the next node based on the frontier.</li>
+                            <li><b>Information:</b> Refer to the Information section for the Frontier, the current node (Visiting), the next node (To Visit), and the Current Path on which the current node has been expanded.</li>
+                            <li><b>Path History:</b> The Path History section displays the path taken and the total path cost at each step of the algorithm.</li>
+                            <li><b>Question:</b> Answer the question in the Question section and click on <b>Submit</b> to proceed to the next step of the algorithm. 
+                                It will only proceed if the correct answer is given. Otherwise, "<span style="color:red">Wrong answer, try again </span>" will be displayed. 
+                                After 3 incorrect attempts, a hint may be given. After 5 incorrect attempts, the correct answer will be displayed. At the 7th incorrect attempt, the algorithm will proceed regardless of the answer.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start">
+
+            <div id="control_container" class="column is-2-desktop is-12-tablet is-12-mobile">
+                <div class="v-datalist-container">
+                    <div class="v-datalist-title">Controls</div>
+                    <div id="controlls" class="v-datalist-row">
+                        <div style="margin:5px 0px">
+                            <label id="sv">Start Vertex: </label><input id="svi" type="number" value=4 min=0 style="width:50px;"/>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <label id="ev">End Vertex (fixed): </label><input id="evi" type="number" value=0 min=0 style="width:50px;" readonly/>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <label id="ml">Memory Limit: </label><input id="mli" type="number" value=4 min=1 style="width:50px;"/>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <!-- <button id="startucs" class="button" onclick="vclear(); SN = Number(document.getElementById('svi').value); EN = Number(document.getElementById('evi').value); console.log('started expt with SN', SN);costSoFar = {[SN]:0}; setHeuristics(); console.log(heuristics); visit.put(heuristics[SN], SN); UCS(); this.disabled=true; started=true;">Start UCS</button> -->
+                            <button id="startucs" class="button" onclick="vclear(); SN = Number(document.getElementById('svi').value); EN = Number(document.getElementById('evi').value); ML = Number(document.getElementById('mli').value);console.log('started expt with SN', SN);frontier_elements = new Set([SN]); gScore = {[SN]:0}; fScore = {[SN]:heuristics[SN]}; level = {[SN]:1}; setHeuristics(); console.log(heuristics); visit.put(heuristics[SN], SN); document.getElementById('disablewarning').style.display=''; removeEventListeners();UCS(); this.disabled=true; started=true;">Start SMA*</button>
+                            <p id="disablewarning" style="color: red; display: none;">Adding of nodes and edges temporarily disabled until algorithm stops.</p>
+                            <button id="nuxt" class="button" onclick="UCS();">Next</button>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <input id="auto" type=checkbox>&nbsp;&nbsp;AutoPlay</button>
+                            <input id="autor" type="range" min="1" max="2" step="0.1" value="1.5" class="slider" id="myRange" onchange="if (refreshIntervalId != null) {console.log(refreshIntervalId, ); clearInterval(refreshIntervalId);refreshIntervalId = setInterval(UCS, 1000*(3-input.value));}">
+                        </div>
+                        <div style="margin:5px 0px">
+                            <button id="cc" class="button" onclick="cclear();">Clear</button>
+                            <button id="vc" class="button" onclick="vclear();">Clear Visited</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="v-datalist-container", style="margin-top: 20px;">
+                    <div class="v-datalist-title">Heuristics Table</div>
+                    <ul id="heuristics_table" style="list-style-type: decimal; overflow-y: scroll; max-height: 150px;"></ul>
+                </div>
+            </div>
+
+            <div id="canvas_container" class="column is-8-desktop is-12-tablet is-12-mobile">
+                <canvas id="canvas" style="width:100%;" height="500" oncontextmenu="return false;"></canvas>
+            </div>
+
+            <div id="info_container" class="column is-2-desktop is-12-tablet is-12-mobile">
+                <div class="v-datalist-container" style="padding-left: 5px;">
+                    <div class="v-datalist-title">Information</div>
+                    <div id="info" class="v-datalist-row" style="text-align:left;">
+                        <div style="margin:5px 0px">
+                            <label><span style="background-color:orange;">&nbsp;&nbsp;</span>&nbsp;Frontier:&nbsp;</label><span id="visit_array"></span>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <label><span style="background-color:cyan;">&nbsp;&nbsp;</span>&nbsp;Visiting:&nbsp;</label><span id="visiting_node"></span>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <label><span style="background-color:yellow;">&nbsp;&nbsp;</span>&nbsp;To Visit:&nbsp;</label><span id="tovisit_node"></span>
+                        </div>
+                        <div style="margin:5px 0px">
+                            <label><span style="background-color:red;">&nbsp;&nbsp;</span>&nbsp;Current Path:&nbsp;</label><span id="path_nodes"></span>
+                        </div>
+                        <div id="goal_not_reached" style="margin:5px 0px; display:none; text-align:left; color:red;">
+                            Goal Not Reached
+                        </div>
+                    </div>
+                </div>
+                <div id="EdgeBox" class="v-datalist-container" style="padding-left: 5px;margin-top: 20px; display: none;">
+                    <div id="info" class="v-datalist-row" style="text-align:center;">
+                        <div id="submitform" style="margin:10px 0px">
+                                <label id="edge">Enter Edge Cost: </label><input id="edgeweight" type="number" min=1 max=2000 style="width:50px;"/><br>
+								<button id="submitedge" style="margin-top: 2px;" class="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="PathHistory" class="v-datalist-container", style="margin-top: 20px;">
+                    <div class="v-datalist-title">Path History</div>
+                    <div id="info" class="v-datalist-row" style="text-align:left;">
+                        <div style="margin:5px 0px">
+                            <!-- <ul id="path_history_list" style="list-style: none;"></ul> -->
+                            <ul id="path_history_list" style="list-style-type: decimal; overflow-y: scroll; max-height: 150px;"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="QuestionBox" class="v-datalist-container" style="padding-left: 5px;margin-top: 20px;">
+                    <div class="v-datalist-title" style="color: red;" id="qoro" >Question</div>
+                    <div id="info" class="v-datalist-row" style="text-align:center;">
+                        <div style="margin:5px 0px">
+                            <p id="question">Lorem ipsum dolor sit amet. Qui quae illum rem neque veritatis ab dicta minima. Ut quidem voluptatibus ab dignissimos magnam.</p>
+                        </div>
+                        <div id="submitform" style="margin:10px 0px">
+                                <label id="ans">Answer: </label><input id="answer" type="number" style="width:50px;"/><br>
+								<button style="margin-top: 2px;" class="button" onclick="submit(document.getElementById('answer').value);">Submit</button>
+                        </div>
+                        <div id="hint" style="margin:5px 0px; text-align:left; color:red;">
+                        </div>
+                </div>
+
+            </div>
+      </div>
+
+        <script src="js/priority_queue.js"></script>
+        <script src="js/main.js"></script>
+		<script src="js/graph.js"></script>
+		<script src="js/data.js"></script>
+        <script src="js/question.js"></script>
+        <script src="js/preset.js"></script>
+        <script src="js/delta_refresh.js"></script>
+        <script src="js/mvcircle.js"></script>
+    <script src="../assets/js/iframeResize.js"></script>
+          
+          </body>
+
+</html>
